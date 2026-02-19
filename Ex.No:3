@@ -1,0 +1,17 @@
+PROGRAM:
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+model = Sequential()
+model.add(Dense(128, input_dim=784, activation='relu'))
+model.add(Dense(10, activation='softmax'))
+
+model.compile(loss='categorical_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+
+print("ANN Model Created")
+
+OUTPUT:
+ANN Model Created
+Output Layer: 10 neurons (digits 0–9)
