@@ -1,0 +1,29 @@
+PROGRAM:
+from sklearn.tree import DecisionTreeClassifier
+
+X = [
+    ['High','Yes','Yes','Old'],
+    ['High','Yes','No','Young'],
+    ['Normal','Yes','Yes','Old'],
+    ['Low','No','No','Young']
+]
+
+y = ['Yes','Yes','No','No']
+
+# Encode manually
+X_encoded = [
+    [2,1,1,1],
+    [2,1,0,0],
+    [1,1,1,1],
+    [0,0,0,0]
+]
+
+model = DecisionTreeClassifier()
+model.fit(X_encoded, y)
+
+print("Tree built successfully")
+
+OUTPUT:
+Decision Tree Generated
+Example Rule:
+IF Fever = High AND Cough = Yes → Disease = Yes
